@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: #e0e1e3;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.side-bar {
+  position: fixed;
+  background-color: #210a76;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  width: 20%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 4rem;
+  overflow: hidden;
+  border-top-right-radius: 30px;
+}
+
+.side-bar .title-heading {
+  text-align: center;
+}
+
+.side-bar .title-heading h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.side-bar .title-heading span {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.side-bar nav .nav-link {
+  margin-top: 4rem;
+  padding-left: 7rem;
+}
+
+.side-bar nav .nav-link li {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.side-bar nav .nav-link li a {
+  color: #fff;
+  font-size: 1.5rem;
+  display: block;
+  position: relative;
+  padding: 1rem;
+  padding-left: 2rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.side-bar nav .nav-link li:hover, .side-bar nav .nav-link .active {
+  background-color: #fff;
+  border-radius: 30px 0 0 30px;
+}
+
+.side-bar nav .nav-link li:hover a, .side-bar nav .nav-link .active a {
+  color: #210a76;
+}
+
+.side-bar nav .nav-link li:hover a::before, .side-bar nav .nav-link li:hover .active, .side-bar nav .nav-link .active a::before, .side-bar nav .nav-link .active .active {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  top: -50px;
+  -webkit-box-shadow: 35px 35px 0 10px #fff;
+          box-shadow: 35px 35px 0 10px #fff;
+}
+
+.side-bar nav .nav-link li:hover a::after, .side-bar nav .nav-link li:hover .active, .side-bar nav .nav-link .active a::after, .side-bar nav .nav-link .active .active {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  bottom: -50px;
+  -webkit-box-shadow: 35px -35px 0 10px #fff;
+          box-shadow: 35px -35px 0 10px #fff;
+}
+
+.container {
+  position: relative;
+  margin-left: 20%;
+}
+
+.container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 1.5rem;
+  margin-left: calc(1px * 25);
+  background-color: #fff;
+  border-bottom-left-radius: 4px;
+}
+
+.container header .left-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+.container header .left-header i {
+  font-size: 3.5rem;
+  color: #210a76;
+  cursor: pointer;
+}
+
+.container header .left-header #searchIcon {
+  font-size: 1rem;
+  background-color: #210a76;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding: 1rem 2rem;
+}
+
+.container header .left-header .form-group {
+  background-color: #e0e1e3;
+  padding: .7rem 1.5rem;
+  border-radius: 5rem;
+  margin-left: 2rem;
+  position: relative;
+}
+
+.container header .left-header input, .container header .left-header select {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.container header .left-header select {
+  width: 10rem;
+  border-right: 1px solid grey;
+}
+
+.container header .left-header input {
+  width: 38rem;
+  padding-left: 2rem;
+}
+
+.container header .right-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container header .right-header li {
+  margin-right: 1.2rem;
+  background-color: #e0e1e3;
+  padding: .7rem;
+  border-radius: 50%;
+}
+
+.container header .login-sec {
+  width: 5%;
+}
+
+.container header .login-sec img {
+  width: 64%;
+  border-radius: 50%;
+}
+
+.container main {
+  padding: calc(1px * 25);
+}
+
+.container main .chart, .container main .earning-card, .container main .monthly-sale, .container main .yearly-sale, .container main .calender {
+  border-radius: 4px;
+  padding: calc(1px * 15);
+  background-color: #fff;
+}
+
+.container main .top-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container main .top-card .chart {
+  width: calc(65% - 25px);
+  background-color: #fff;
+  margin-right: calc(1px * 25);
+}
+
+.container main .top-card .chart h2 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #292727;
+  margin-bottom: 20px;
+}
+
+.container main .top-card .earning-card {
+  width: 35%;
+}
+
+.container main .top-card .earning-card h2 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #292727;
+  margin-bottom: 20px;
+}
+
+.container main .top-card .earning-card p {
+  font-size: 1.1rem;
+  color: grey;
+  margin-top: 13px;
+}
+
+.container main .top-card .earning-card p span {
+  text-align: right;
+  color: #000;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  float: right;
+  font-weight: bolder;
+}
+
+.container main .top-card .monthly-sale, .container main .top-card .yearly-sale {
+  width: calc(26% - 25px);
+  margin-right: calc(1px * 25);
+  margin-top: calc(1px * 25);
+}
+
+.container main .top-card .monthly-sale h2, .container main .top-card .yearly-sale h2 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #292727;
+  margin-bottom: 20px;
+}
+
+.container main .top-card .monthly-sale .progress-bar, .container main .top-card .yearly-sale .progress-bar {
+  background-color: silver;
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+.container main .top-card .monthly-sale .total-income, .container main .top-card .yearly-sale .total-income {
+  background-color: #210a76;
+  color: white;
+  padding: 1%;
+  text-align: right;
+  font-size: 1px;
+  border-radius: 15px;
+}
+
+.container main .top-card .monthly-sale .container-bar, .container main .top-card .yearly-sale .container-bar {
+  width: 65%;
+}
+
+.container main .top-card .monthly-sale h3, .container main .top-card .yearly-sale h3 {
+  font-size: 2.7rem;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.container main .top-card .monthly-sale p, .container main .top-card .yearly-sale p {
+  font-size: 1rem;
+  color: grey;
+  text-align: center;
+}
+
+.container main .top-card .yearly-sale .total-income {
+  background-color: #62d181;
+}
+
+.container main .top-card .yearly-sale .container-bar {
+  width: 75%;
+}
+
+.container main .top-card .calender {
+  width: 48%;
+  margin-top: calc(1px * 25);
+}
+
+.container main .top-card .calender h2 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #292727;
+  margin-bottom: 20px;
+}
+
+.widthMin {
+  width: 10%;
+}
+
+.containerHide {
+  margin-left: 10%;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .widthMin {
+    width: 0;
+  }
+  .side-bar {
+    position: absolute;
+    z-index: 999;
+  }
+  .containerHide {
+    margin-left: 0;
+  }
+  .container header {
+    margin-left: 0;
+  }
+  .container {
+    margin-left: 0;
+  }
+  .container header .left-header {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 68%;
+  }
+  .side-bar nav .nav-link {
+    padding-left: 3rem;
+  }
+  .container header .left-header input {
+    width: 26rem;
+  }
+  .container header .left-header {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 100%;
+  }
+  .container header .right-header, .container header .login-sec {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 55%;
+  }
+  .container main .top-card .chart {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  .container main .top-card .earning-card {
+    width: calc(44% - 25px);
+    margin-right: 25px;
+  }
+  .container main .top-card .monthly-sale {
+    margin-top: 0;
+    width: calc(28% - 25px);
+  }
+  .container main .top-card .yearly-sale {
+    margin: 0 0 0 0;
+    width: 28%;
+  }
+  .container main .top-card .calender {
+    width: 100%;
+  }
+}
+
+@media (max-width: 668px) {
+  html {
+    font-size: 48%;
+  }
+  .side-bar {
+    width: 35%;
+  }
+  .widthMin {
+    width: 0;
+  }
+  .container header .left-header .form-group {
+    display: none;
+  }
+  .container main .top-card .earning-card {
+    width: 100%;
+    margin-right: 0;
+  }
+  .container main .top-card .monthly-sale {
+    margin-top: 25px;
+    width: calc(50% - 25px);
+  }
+  .container main .top-card .yearly-sale {
+    margin: 0 0 0 0;
+    margin-top: 25px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 468px) {
+  html {
+    font-size: 42%;
+  }
+  .side-bar {
+    width: 50%;
+  }
+  .widthMin {
+    width: 0;
+  }
+  .container main .top-card .earning-card {
+    width: 100%;
+    margin-right: 0;
+  }
+  .container main .top-card .monthly-sale {
+    margin-top: 25px;
+    width: 100%;
+    margin-right: 0;
+  }
+  .container main .top-card .yearly-sale {
+    margin: 0 0 0 0;
+    margin-top: 25px;
+    width: 100%;
+  }
+  .calendarList1 li {
+    padding: 2px 5px;
+  }
+  .calendarList1 {
+    -ms-grid-columns: none;
+        grid-template-columns: none;
+  }
+}
+/*# sourceMappingURL=index.css.map */

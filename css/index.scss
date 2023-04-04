@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    background-color: #e0e1e3;
+}
+html{
+    font-size: 62.5%;
+}
+// variable declaration
+$whiteColor: #fff;
+$blueColor:  #210a76;
+$init: 1px;
+a{
+    text-decoration: none;
+}
+// start here side bar css
+.side-bar{
+    position: fixed;
+    background-color: $blueColor;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 20%;
+    transition: 0.5s;
+    padding-top: 4rem;
+    overflow: hidden;
+    border-top-right-radius: 30px;
+    .title-heading{
+        text-align: center;
+        h1{
+            color: $whiteColor;
+            font-size: 2.5rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+        span{
+            color: $whiteColor;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+    }
+    nav{
+        .nav-link{
+            margin-top: 4rem;
+            padding-left: 7rem;
+            li{
+                margin-bottom: 2rem;
+                width: 100%;
+                a{
+                    color: $whiteColor;
+                    font-size: 1.5rem;
+                    display: block;
+                    position: relative;
+                    padding: 1rem;
+                    padding-left: 2rem;
+                    transition: 0.5s;
+                }
+            }
+            li:hover, .active{
+                    background-color: $whiteColor;
+                    border-radius: 30px 0 0 30px; 
+                    a{
+                        color: $blueColor;
+                    }
+                    @mixin hoverEffect {
+                        content: ' ';
+                        position: absolute;
+                        right: 0;
+                        z-index: 999;
+                        width: 50px;
+                        height: 50px;
+                        background-color: transparent;
+                        border-radius: 50%;
+                    }
+                    a::before, .active{
+                        @include hoverEffect;
+                        top: -50px;
+                        box-shadow: 35px 35px 0 10px $whiteColor;
+                    }
+                    a::after, .active{
+                        @include hoverEffect;
+                        bottom: -50px;
+                        box-shadow: 35px -35px 0 10px $whiteColor;
+                    }
+                }
+        }
+    }
+}
+// start here container and header css
+.container{
+    position: relative;
+    margin-left: 20%;
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 1.5rem;
+        margin-left: calc(#{$init} * 25);
+        background-color: $whiteColor;
+        border-bottom-left-radius: 4px;
+        .left-header{
+            display: flex;
+            align-items: center;
+            width: 80%;
+            i{
+                font-size: 3.5rem;
+                color: $blueColor;
+                cursor: pointer;
+            }
+            #searchIcon{
+                font-size: 1rem;
+                background-color: $blueColor;
+                color: $whiteColor;
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-top-right-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                padding: 1rem 2rem;
+            }
+            .form-group{
+                background-color: #e0e1e3;
+                padding: .7rem 1.5rem;
+                border-radius: 5rem;
+                margin-left: 2rem;
+                position: relative;
+            }
+            input, select{
+                outline: none;
+                border: none;
+                background-color: transparent;
+            }
+            select{
+                width: 10rem;
+                border-right: 1px solid grey;
+            }
+            input{
+                width: 38rem;
+                padding-left: 2rem;
+            }
+        }
+        .right-header{
+            display: flex;
+            width: 15%;
+            justify-content: center;
+            li{
+                margin-right: 1.2rem;
+                background-color: #e0e1e3;
+                padding: .7rem;
+                border-radius: 50%;
+            }
+        }
+        .login-sec{
+            width: 5%;
+            img{
+                width: 64%;
+                border-radius: 50%;
+            }
+        }
+    }
+    // start main part css
+    main{
+        padding: calc(#{$init} * 25);
+        @mixin h2fontSize {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: rgb(41, 39, 39);
+            margin-bottom: 20px;
+        }
+        .chart, .earning-card, .monthly-sale, .yearly-sale, .calender{
+            border-radius: 4px;
+            padding: calc(#{$init} * 15);
+            background-color: $whiteColor;
+        }
+        .top-card{
+            display: flex;
+            flex-wrap: wrap;
+            .chart{
+                width: calc(65% - 25px);
+                background-color: $whiteColor;
+                margin-right: calc(#{$init} * 25);
+                h2{
+                    @include h2fontSize;
+                }
+            }
+            .earning-card{
+                width: 35%;
+                h2{
+                    @include h2fontSize;
+                }
+                p{
+                    font-size: 1.1rem;
+                    color: grey;
+                    margin-top: 13px;
+                span{
+                    text-align: right;
+                    color: #000;
+                    font-size: 1.2rem;
+                    letter-spacing: 1px;
+                    float: right;
+                    font-weight: bolder;
+                }
+                }
+            }
+            .monthly-sale, .yearly-sale{
+                width: calc(26% - 25px);
+                margin-right: calc(#{$init} * 25);
+                margin-top: calc(#{$init} * 25);
+                h2{
+                    @include h2fontSize;
+                }
+                .progress-bar {
+                    background-color: rgb(192, 192, 192);
+                    width: 100%;
+                    margin-top: 30px;
+                    border-radius: 15px;
+                }
+                
+                .total-income {
+                    background-color: #210a76;
+                    color: white;
+                    padding: 1%;
+                    text-align: right;
+                    font-size: 1px;
+                    border-radius: 15px;
+                }
+                .container-bar {
+                    width: 65%;
+                }
+                h3{
+                    font-size: 2.7rem;
+                    text-align: center;
+                    margin-top: 15px;
+                }
+                p{
+                    font-size: 1rem;
+                    color: grey;
+                    text-align: center;
+                }
+            }
+            .yearly-sale{
+                .total-income {
+                    background-color: #62d181;
+                }
+                .container-bar {
+                    width: 75%;
+                }
+            }
+            .calender{
+                width: 48%;
+                margin-top: calc(#{$init} * 25);
+                h2{
+                    @include h2fontSize;
+                }
+            }
+        }
+    }
+}
+
+// automatic css add or remove using for this css
+.widthMin{
+    width: 10%;
+}
+.containerHide{
+    margin-left: 10%;
+    position: relative;
+}
+
+// Responsive css
+@media (max-width: 992px){
+    .widthMin{
+        width: 0;
+    }
+    .side-bar {
+        position:absolute;
+        z-index: 999;
+    }
+    .containerHide{
+        margin-left: 0;
+    }
+    .container header {
+        margin-left: 0;
+    }
+    .container{
+        margin-left: 0;
+    }
+    .container header .left-header {
+        justify-content: flex-end;
+        width: 68%;
+    }
+    .side-bar nav .nav-link {
+        padding-left: 3rem;
+    }
+    .container header .left-header input {
+        width: 26rem;
+    }
+    .container header .left-header {
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .container header .right-header, .container header .login-sec{
+        display: none;
+    } 
+}
+@media (max-width: 800px){
+    html{
+        font-size: 55%;
+    }
+    .container main .top-card .chart{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    .container main .top-card .earning-card{
+        width: calc(44% - 25px);
+        margin-right: 25px;
+    }
+    .container main .top-card .monthly-sale{
+        margin-top: 0;
+        width: calc(28% - 25px);
+    }
+    .container main .top-card .yearly-sale{
+        margin: 0 0 0 0;
+        width: 28%;
+    }
+    .container main .top-card .calender{
+        width: 100%;
+    }
+}
+@media (max-width: 668px){
+    html{
+        font-size: 48%;
+    }
+    .side-bar {
+        width: 35%;
+    }
+    .widthMin{
+        width: 0;
+    }
+    .container header .left-header .form-group{
+        display: none;
+    } 
+    .container main .top-card .earning-card{
+        width: 100%;
+        margin-right: 0;
+    }
+    .container main .top-card .monthly-sale{
+        margin-top: 25px;
+        width: calc(50% - 25px);
+    }
+    .container main .top-card .yearly-sale{
+        margin: 0 0 0 0;
+        margin-top: 25px;
+        width: 50%;
+    } 
+}
+@media (max-width: 468px){
+    html{
+        font-size: 42%;
+    }
+    .side-bar {
+        width: 50%;
+    }
+    .widthMin{
+        width: 0;
+    }
+    .container main .top-card .earning-card{
+        width: 100%;
+        margin-right: 0;
+    }
+    .container main .top-card .monthly-sale{
+        margin-top: 25px;
+        width: 100%;
+        margin-right: 0;
+    }
+    .container main .top-card .yearly-sale{
+        margin: 0 0 0 0;
+        margin-top: 25px;
+        width: 100%;
+    } 
+    .calendarList1 li{
+        padding: 2px 5px;
+    }
+    .calendarList1 {
+        grid-template-columns: none;
+    }
+}

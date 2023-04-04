@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome cdn link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- Jquery cdn link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Calender.js plugin cdn  -->
+  <script src="js/calendar.js"></script>
+  <!-- Calender plugin css link  -->
+  <link rel="stylesheet" href="css/calender.css">
+  <!-- Our web page main css -->
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- Chart.js plugin cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <title>Coolboots media dashboard</title>
+</head>
+<body>
+  <aside class="side-bar">
+    <div class="title-heading">
+      <h1>CoolBoots</h1>
+      <span>practical test</span>
+    </div>
+    <nav>
+      <ul class="nav-link" id="navLink">
+        <li>
+          <a href="#"> Dashboard </a>
+        </li>
+        <li>
+          <a href="#"> My Task </a>
+        </li>
+        <li>
+          <a href="#"> My Project </a>
+        </li>
+        <li>
+          <a href="#"> My Wallet </a>
+        </li>
+        <li>
+          <a href="#"> History Data </a>
+        </li>
+        <li>
+          <a href="#"> Invoice </a>
+        </li>
+        <li>
+          <a href="#"> Helps </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <section class="container">
+    <header>
+      <div class="left-header">
+        <i class="fa-solid fa-bars" id="menuBar"></i>
+        <div class="form-group">
+          <form action="#">
+            <select name="option">
+              <option value="option1">All catagory</option>
+              <option value="option1">All catagory</option>
+              <option value="option1">All catagory</option>
+            </select>
+            <input type="search" name="" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+          </form>
+        </div>
+      </div>
+      <ul class="right-header">
+        <li><i class="fa-regular fa-bell"></i></li>
+        <li><i class="fa-regular fa-envelope"></i></li>
+      </ul>
+      <div class="login-sec">
+        <span><img src="img/login.jpg" alt="login images" /></span>
+      </div>
+    </header>
+    <main>
+      <div class="top-card">
+        <div class="chart">
+          <h2>Statistics</h2>
+          <canvas id="myChart" style="width: 100%; height: 280px"></canvas>
+        </div>
+        <div class="earning-card">
+          <h2>Earning in Month</h2>
+          <canvas id="myEarning" style="width: 200px; height: 120px;"></canvas>
+          <p>Deposit :<span>$23 23 1 24464</span></p>
+          <p>Expese :<span>$23 1 24464</span></p>
+          <p>Payble :<span>$23 1 24464</span></p>
+        </div>
+        <div class="monthly-sale">
+          <h2>Monthly Sale</h2>
+          <canvas id="myMonthly" style="width: 90px; height: 70px"></canvas>
+          <div class="progress-bar">
+            <div class="total-income container-bar">65%</div>
+          </div>
+          <h3>20 54 1</h3>
+          <p>Today Income</p>
+        </div>
+        <div class="yearly-sale">
+          <h2>Yearly Sale</h2>
+          <canvas id="myYearly" style="width: 90px; height: 70px"></canvas>
+          <div class="progress-bar">
+            <div class="total-income container-bar">75%</div>
+          </div>
+          <h3>20 54 125</h3>
+          <p>Today Income</p>
+        </div>
+        <div class="calender" id="myCalendar">
+          <h2>Calender</h2>
+          <div class="hbContainer">
+            <div class="calendarYearMonth center">
+              <p class="left calBtn" onclick="prevMonth()">
+                <i class="fa-regular fa-less-than"></i>
+              </p>
+              <p id="yearMonth"> Jan 2021 </p>
+              <p class="right calBtn" style="background-color: #d8dde3;border: 1px solid #d8dde3;"
+                onclick="nextMonth()">
+                <i class="fa-regular fa-greater-than"></i>
+              </p>
+            </div>
+            <div>
+              <ol class="calendarList1">
+                <li class="day-name">Sat</li>
+                <li class="day-name">Sun</li>
+                <li class="day-name">Mon</li>
+                <li class="day-name">Tue</li>
+                <li class="day-name">Wed</li>
+                <li class="day-name">Thu</li>
+                <li class="day-name">Fri</li>
+              </ol>
+              <ol class="calendarList2" id="calendarList">
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+  </section>
+<script src="js/main.js"></script>
+</body>
+</html>
